@@ -1,0 +1,51 @@
+body {
+    background-image: url("../img/sunset-984546_1920.jpg");
+    background-repeat: no-repeat;
+}
+table {
+    background: transparent;
+    text-align: center;
+    color: bisque;
+
+}
+table#t01 tbody tr:hover{
+    background-color: goldenrod;
+}
+.selected {
+    background: goldenrod;
+    opacity: 0.7;
+}
+thead th {
+    background-color: aquamarine ;
+    text-align: center;
+    color: black;
+    opacity: 0.5;
+}
+div#updbtn {
+    text-align: center;
+}
+
+table#t02 td{
+    background: transparent;
+
+}
+
+div#extra1 {
+    text-align: right;
+}
+
+td.position {
+    display: none;
+}
+td.department {
+    display: none;
+}
+td.characteristic {
+    display: none;
+}
+.updbtnhide {
+    display: none;
+}
+.updbtndisp {
+    display: block;
+}
