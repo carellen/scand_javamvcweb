@@ -2,6 +2,7 @@ package scand;
 
 import com.opensymphony.xwork2.ActionSupport;
 import scand.model.Employee;
+import scand.model.EmployeeModel;
 import scand.model.Entity;
 import scand.service.DBHelper;
 
@@ -11,15 +12,17 @@ import java.util.List;
 
 public class Select extends ActionSupport {
 
-    private List<Entity> entityList = new ArrayList<>();
+    private List<Employee> entityList = new ArrayList<>();
+    private EmployeeModel model = new EmployeeModel();
 
-    public List<Entity> getEntityList() {
+
+    public List<Employee> getEntityList() {
         return entityList;
     }
 
     public String execute() throws Exception {
 
-        ResultSet resultSet = DBHelper.getInstance().readAll();
+       /* ResultSet resultSet = DBHelper.getInstance().readAll();
         while (resultSet.next()) {
             Employee employee = new Employee(
                     resultSet.getInt("id"),
@@ -30,7 +33,8 @@ public class Select extends ActionSupport {
                     resultSet.getString("characteristic")
             );
             entityList.add(employee);
-        }
+        }*/
+       entityList = model.findAll();
         return SUCCESS;
     }
 }

@@ -1,18 +1,61 @@
 package scand.model;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@javax.persistence.Entity
+@Table(name = "employees")
 public class Employee extends Entity {
+    @Id
+    @GeneratedValue
+    private int id;
+    @Column(name="firstname")
+    private String firstName;
+    @Column(name="lastname")
+    private String lastName;
+    @Column(name="position")
     private String position;
+    @Column(name="department")
     private String department;
+    @Column(name="characteristic")
     private String characteristic;
 
     public Employee() {
     }
 
     public Employee(int id, String firstName, String lastName, String position, String department, String characteristic) {
-        super(id, firstName, lastName);
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.position = position;
         this.department = department;
         this.characteristic = characteristic;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getPosition() {
@@ -41,8 +84,11 @@ public class Employee extends Entity {
 
     @Override
     public String toString() {
-        return super.toString() + "Employee{" +
-                "position='" + position + '\'' +
+        return "Employee{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", position='" + position + '\'' +
                 ", department='" + department + '\'' +
                 ", characteristic='" + characteristic + '\'' +
                 "} ";
