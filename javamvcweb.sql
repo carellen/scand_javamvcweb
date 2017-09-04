@@ -42,7 +42,7 @@ CREATE TABLE `employees` (
 
 LOCK TABLES `employees` WRITE;
 /*!40000 ALTER TABLE `employees` DISABLE KEYS */;
-INSERT INTO `employees` VALUES (1,'Eddard','Stark','dead','cemetry','brave, honest, but dumb king of North'),(2,'Jon','Snow','King','North','brave, honest, little less stupid then father king of North'),(3,'Daenerys','Targaryen','dragonsMother','stray','brave, honest etc.'),(4,'Petyr777','Baelish','toady','wherewarmly','cunning son of bitch');
+INSERT INTO `employees` VALUES (1,'Eddard','Stark','dead','cemetry','brave, honest, but dumb king of North'),(2,'Jon','Snow','King','North','brave, honest, little less stupid then father king of North'),(3,'Daenerys','Targaryen','dragonsMother','stray','brave, honest etc.'),(4,'Petyr','Baelish','toady','wherewarmly','cunning son of bitch');
 /*!40000 ALTER TABLE `employees` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
