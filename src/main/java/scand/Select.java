@@ -12,29 +12,45 @@ import java.util.List;
 
 public class Select extends ActionSupport {
 
-    private List<Employee> entityList = new ArrayList<>();
+    private static List<Employee> entityList = new ArrayList<>();
     private EmployeeModel model = new EmployeeModel();
+    private Employee employee = new Employee();
+    private int id;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
 
     public List<Employee> getEntityList() {
         return entityList;
     }
 
     public String execute() throws Exception {
-
-       /* ResultSet resultSet = DBHelper.getInstance().readAll();
-        while (resultSet.next()) {
-            Employee employee = new Employee(
-                    resultSet.getInt("id"),
-                    resultSet.getString("firstname"),
-                    resultSet.getString("lastname"),
-                    resultSet.getString("position"),
-                    resultSet.getString("department"),
-                    resultSet.getString("characteristic")
-            );
-            entityList.add(employee);
-        }*/
        entityList = model.findAll();
+        return SUCCESS;
+    }
+    public String click() throws Exception {
+        employee = entityList.stream()
+                .filter(employee -> this.id == employee.getId())
+                .findAny().orElse(null);
+        return SUCCESS;
+    }
+    public String save() throws Exception {
+       model.update(employee);
+       entityList = model.findAll();
+
         return SUCCESS;
     }
 }

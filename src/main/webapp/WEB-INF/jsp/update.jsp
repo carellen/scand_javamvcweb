@@ -8,9 +8,9 @@
 <head>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/script.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
     <title>Update</title>
     <s:head />
 </head>
@@ -24,7 +24,7 @@
     </tr>
     </thead>
     <tbody>
-    <s:iterator value="entityList" var="list">
+    <s:iterator var="list" value="entityList" >
         <tr class="rows" onclick="myFunction(this)">
             <td class="id"><s:property value="id"/></td>
             <td class="firstName"><s:property value="firstName"/></td>
@@ -36,13 +36,7 @@
     </s:iterator>
     </tbody>
 </table>
-
-<s:form action="update" theme="simple">
-    <div id="selectedId"></div>
-    <div id="updbtn" class="updbtnhide">
-    <s:submit value="SAVE" class="btn btn-outline-warning"/>
-    </div>
-</s:form>
+<div id="selectedId"></div>
 
 </body>
 </html>

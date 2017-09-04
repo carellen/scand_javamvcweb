@@ -3,6 +3,7 @@ package scand;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import scand.model.Employee;
+import scand.model.EmployeeModel;
 import scand.model.Entity;
 import scand.service.DBHelper;
 
@@ -12,7 +13,9 @@ import java.util.List;
 
 public class UpdateTable extends ActionSupport {
 
-    private List<Entity> entityList = new ArrayList<>();
+    private List<Employee> entityList = new ArrayList<>();
+
+    private EmployeeModel model = new EmployeeModel();
 
     private int id;
     private String firstName;
@@ -20,6 +23,16 @@ public class UpdateTable extends ActionSupport {
     private String position;
     private String department;
     private String characteristic;
+
+    private Employee employee = new Employee();
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -69,11 +82,11 @@ public class UpdateTable extends ActionSupport {
         this.id = id;
     }
 
-    public void setEntityList(List<Entity> entityList) {
+    public void setEntityList(List<Employee> entityList) {
         this.entityList = entityList;
     }
 
-    public List<Entity> getEntityList() {
+    public List<Employee> getEntityList() {
         return entityList;
     }
 
@@ -86,7 +99,7 @@ public class UpdateTable extends ActionSupport {
                 (String)ActionContext.getContext().getValueStack().findValue("department"),
                 (String)ActionContext.getContext().getValueStack().findValue("characteristic")
         );
-        ResultSet resultSet = DBHelper.getInstance().readAll();
+      /*  ResultSet resultSet = DBHelper.getInstance().readAll();
         while (resultSet.next()) {
             Employee employee = new Employee(
                     resultSet.getInt("id"),
@@ -98,6 +111,8 @@ public class UpdateTable extends ActionSupport {
             );
             entityList.add(employee);
         }
+       model.update(model.find(this.id));*/
+       entityList = model.findAll();
         return SUCCESS;
     }
 }

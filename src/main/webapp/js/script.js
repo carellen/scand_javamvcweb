@@ -1,5 +1,15 @@
 
+
 myFunction = function(c) {
+        var id = $(c).find('td.id').html();
+        $('tr').removeClass();
+        $(c).addClass('selected');
+        $.get("index.action", {id: id}, function (responseText) {
+            $('#selectedId').html($(responseText).find('div.tableforinsert').html());
+            $('div#updbtn').addClass('updbtndisp');
+        });
+};
+/*myFunction2 = function(c) {
     var id = $(c).find('td.id').html();
     var firstName = $(c).find('td.firstName').html();
     var lastName = $(c).find('td.lastName').html();
@@ -19,19 +29,19 @@ myFunction = function(c) {
         success:
             function (data) {
                 $('#selectedId').html($(data).find('div.tableforinsert').html());
+                $('div#updbtn').addClass('updbtndisp');
                 $.ajax({
                     success:
                         function () {
-                            $('tr').removeClass();
-                            $('div#updbtn').removeClass();
-                            $(c).addClass('selected');
-                            $('div#updbtn').addClass('updbtndisp');
+
                         }
                 });
             }
     });
+    $('tr').removeClass();
+    $(c).addClass('selected');
+};*/
 
-};
 
 
 

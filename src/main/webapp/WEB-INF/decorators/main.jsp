@@ -13,24 +13,20 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"/>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/script.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
 
     <decorator:head/>
 </head>
 <body id="page-home">
     <div id="page">
         <div id="header" class="clearfix">
-            <hr />
         </div>
         <div id="content" class="clearfix">
             <div id="main">
             	<h3></h3>
-
-                <hr />
             	<decorator:body/>
-                <hr />
             </div>
         </div>
         <div id="footer" class="clearfix">

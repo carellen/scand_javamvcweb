@@ -14,13 +14,14 @@
             <result>/WEB-INF/jsp/update.jsp</result>
         </action>
 
-        <action name="index" class="scand.SetSelId">
-            <interceptor-ref name="params"/>
+        <action name="index" method="click" class="scand.Select">
             <result>/WEB-INF/jsp/nodecorate/table.jsp</result>
         </action>
 
-        <action name="update" class="scand.UpdateTable">
-            <result>/WEB-INF/jsp/update.jsp</result>
+        <action name="update" method="save" class="scand.Select">
+            <result name="success" type="redirect">
+                <param name="location">/index.jsp</param>
+            </result>
         </action>
 
     </package>

@@ -34,6 +34,7 @@ public abstract class AbstractModel<T> {
                 sessionFactory.getCurrentSession().getTransaction().begin();
             sessionFactory.getCurrentSession().merge(instance);
             sessionFactory.getCurrentSession().getTransaction().commit();
+            sessionFactory.getCurrentSession().close();
         } catch (RuntimeException re) {
             sessionFactory.getCurrentSession().getTransaction().rollback();
             throw re;
