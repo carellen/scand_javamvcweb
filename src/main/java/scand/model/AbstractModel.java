@@ -4,6 +4,7 @@ import org.hibernate.SessionFactory;
 import scand.service.HibernateUtil;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @SuppressWarnings("unchecked")
@@ -19,13 +20,16 @@ public abstract class AbstractModel<T> {
     }
 
     public List<T> findAll() {
+        List<T> result = new ArrayList<>();
         try {
             if (!sessionFactory.getCurrentSession().getTransaction().isActive())
                 sessionFactory.getCurrentSession().getTransaction().begin();
-            return sessionFactory.getCurrentSession().createQuery("from " + entityClass.getName()).list();
+            result = sessionFactory.getCurrentSession().createQuery("from " + entityClass.getName()).list();
+            sessionFactory.getCurrentSession().getTransaction().commit();
+
         } catch (RuntimeException re) {
-            return null;
         }
+        return result;
     }
 
     public void update(T instance) {

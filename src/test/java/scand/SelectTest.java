@@ -18,6 +18,7 @@ package scand;
 import junit.framework.TestCase;
 
 import com.opensymphony.xwork2.Action;
+import scand.controller.Select;
 
 /**
  * 

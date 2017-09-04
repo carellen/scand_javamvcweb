@@ -1,4 +1,4 @@
-package scand.model;
+package scand.entities;
 
 import java.io.Serializable;
 

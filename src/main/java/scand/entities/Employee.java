@@ -1,4 +1,4 @@
-package scand.model;
+package scand.entities;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;

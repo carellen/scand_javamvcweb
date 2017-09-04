@@ -1,12 +1,9 @@
-package scand;
+package scand.controller;
 
 import com.opensymphony.xwork2.ActionSupport;
-import scand.model.Employee;
+import scand.entities.Employee;
 import scand.model.EmployeeModel;
-import scand.model.Entity;
-import scand.service.DBHelper;
 
-import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 

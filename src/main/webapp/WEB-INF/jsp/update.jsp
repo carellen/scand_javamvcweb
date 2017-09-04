@@ -25,7 +25,7 @@
     </thead>
     <tbody>
     <s:iterator var="list" value="entityList" >
-        <tr class="rows" onclick="myFunction(this)">
+        <tr class="rows" onclick="onclickFunction(this)">
             <td class="id"><s:property value="id"/></td>
             <td class="firstName"><s:property value="firstName"/></td>
             <td class="lastName"><s:property value="lastName"/></td>
@@ -36,6 +36,7 @@
     </s:iterator>
     </tbody>
 </table>
+
 <div id="selectedId"></div>
 
 </body>

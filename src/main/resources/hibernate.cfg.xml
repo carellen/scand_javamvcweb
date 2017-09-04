@@ -11,6 +11,6 @@
          <property name="hbm2ddl.auto">update</property>
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="current_session_context_class">thread</property>
-        <mapping class="scand.model.Employee"/>
+        <mapping class="scand.entities.Employee"/>
     </session-factory>
 </hibernate-configuration>

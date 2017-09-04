@@ -10,15 +10,15 @@
     <package name="myPackage" extends="struts-default">
 
 
-        <action name="select" class="scand.Select">
+        <action name="select" class="scand.controller.Select">
             <result>/WEB-INF/jsp/update.jsp</result>
         </action>
 
-        <action name="index" method="click" class="scand.Select">
+        <action name="index" method="click" class="scand.controller.Select">
             <result>/WEB-INF/jsp/nodecorate/table.jsp</result>
         </action>
 
-        <action name="update" method="save" class="scand.Select">
+        <action name="update" method="save" class="scand.controller.Select">
             <result name="success" type="redirect">
                 <param name="location">/index.jsp</param>
             </result>
